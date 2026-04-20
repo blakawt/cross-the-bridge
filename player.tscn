@@ -6,8 +6,8 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i3pqv"]
+render_priority = 0
 shader = ExtResource("2_onrkg")
-shader_parameter/mouse = Vector2(0, 0)
 shader_parameter/fft = 0.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_onrkg"]
@@ -28,7 +28,7 @@ mesh = SubResource("CapsuleMesh_onrkg")
 [node name="Camera_Target" type="Node3D" parent="Camera_Controller" unique_id=1956244782]
 
 [node name="Camera3D" type="Camera3D" parent="Camera_Controller/Camera_Target" unique_id=239955649]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45824564, -0.22195792)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45824564, -0.46201402)
 
 [node name="Camera3D2" type="Camera3D" parent="Camera_Controller/Camera_Target" unique_id=1061703124]
 transform = Transform3D(1, 0, 0, 0, 0.975753, 0.218876, 0, -0.218876, 0.975753, 0, 1.36701, 2.25437)

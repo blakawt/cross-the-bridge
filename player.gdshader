@@ -1,7 +1,7 @@
-shader_type canvas_item;
+shader_type spatial;
+render_mode unshaded, cull_disabled;
 
-uniform vec2 mouse = vec2(0.0);
-uniform float fft = 0.0; // remplace iChannel0
+uniform float fft = 0.0;
 
 #define NUM_LAYERS 4.0
 
@@ -31,15 +31,11 @@ float df_line(vec2 a, vec2 b, vec2 p){
 }
 
 float line(vec2 a, vec2 b, vec2 uv) {
-    float r1 = 0.04;
-    float r2 = 0.01;
-    
     float d = df_line(a, b, uv);
     float d2 = length(a-b);
     float fade = S(1.5, 0.5, d2);
-    
     fade += S(0.05, 0.02, abs(d2-0.75));
-    return S(r1, r2, d)*fade;
+    return S(0.04, 0.01, d)*fade;
 }
 
 float NetLayer(vec2 st, float n, float t) {
@@ -73,34 +69,27 @@ float NetLayer(vec2 st, float n, float t) {
         sparkle += s;
     }
     
-    m += line(p[1], p[3], st);
-    m += line(p[1], p[5], st);
-    m += line(p[7], p[5], st);
-    m += line(p[7], p[3], st);
-    
     float sPhase = (sin(t+n)+sin(t*0.1))*0.25+0.5;
     sPhase += pow(sin(t*0.1)*0.5+0.5, 50.0)*5.0;
 
-    m += sparkle*sPhase;
-    
-    return m;
+    return m + sparkle*sPhase;
 }
 
 void fragment() {
-    vec2 resolution = 1.0 / SCREEN_PIXEL_SIZE;
-    vec2 uv = (FRAGCOORD.xy - resolution*0.5) / resolution.y;
+    // 🔥 POSITION 3D → projection en 2D
+    vec3 wp = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
 
-    vec2 M = mouse / resolution - 0.5;
+    // Choix du plan (important)
+    vec2 uv = wp.xz * 0.5; // <- projection sol (stable pour player)
 
     float t = TIME * 0.1;
-    
+
     float s = sin(t);
     float c = cos(t);
-	mat2 rot = mat2(vec2(c, s), vec2(-s, c));
+    mat2 rot = mat2(vec2(c, s), vec2(-s, c));
 
     vec2 st = uv * rot;
-    M *= rot * 2.0;
-    
+
     float m = 0.0;
 
     for(float i=0.0; i<1.0; i+=1.0/NUM_LAYERS) {
@@ -108,19 +97,15 @@ void fragment() {
         float size = mix(15.0, 1.0, z);
         float fade = S(0.0, 0.6, z)*S(1.0, 0.8, z);
         
-        m += fade * NetLayer(st*size - M*z, i, TIME);
+        m += fade * NetLayer(st*size, i, TIME);
     }
-    
+
     float glow = -uv.y * fft * 2.0;
-   
+
     vec3 baseCol = vec3(s, cos(t*0.4), -sin(t*0.24))*0.4+0.6;
-    vec3 col = baseCol*m;
-    col += baseCol*glow;
+    vec3 col = baseCol * m;
+    col += baseCol * glow;
 
-    col *= 1.0 - dot(uv,uv);
-
-    float tt = mod(TIME, 230.0);
-    col *= S(0.0, 20.0, tt) * S(224.0, 200.0, tt);
-
-    COLOR = vec4(col,1.0);
+    ALBEDO = col;
+    EMISSION = col * 2.0; // glow 🔥
 }

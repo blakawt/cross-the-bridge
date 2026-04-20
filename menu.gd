@@ -7,3 +7,9 @@ func _on_button_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+
+
+
+func _on_mute_music_pressed() -> void:
+	pass # Replace with function body.
