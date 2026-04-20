@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dru60kpstsqwb"]
+
+[ext_resource type="PackedScene" uid="uid://br01chminlckq" path="res://player.tscn" id="1_7xctj"]
+[ext_resource type="AudioStream" uid="uid://21uq5s3sxg" path="res://fahhhhhhhhhhhhhh.mp3" id="2_noarx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_a202f"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_a202f"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_noarx"]
+size = Vector3(20.261566, 1, 20.843155)
+
+[sub_resource type="TextMesh" id="TextMesh_a202f"]
+text = "SUS a mong us"
+font_size = 100
+
+[node name="Node3D" type="Node3D" unique_id=222345715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.79957, 7.66016, -1.26396)
+
+[node name="player" parent="." unique_id=515522179 instance=ExtResource("1_7xctj")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.210659, -4.535239, 1.1299883)
+
+[node name="Camera" type="Camera3D" parent="player" unique_id=791169679]
+transform = Transform3D(0.9999569, 2.997528e-05, -0.00928451, 0, 0.9999949, 0.0032285084, 0.009284559, -0.0032283696, 0.99995166, -0.06899285, 0.43527937, -0.276869)
+current = true
+fov = 85.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player" unique_id=251956426]
+mesh = SubResource("CapsuleMesh_a202f")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="player" unique_id=166953061]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1775195311]
+transform = Transform3D(5.118707, 0, 0, 0, -0.7369944, 0.67589897, 0, -0.67589897, -0.7369944, -5.955553, 20.591022, -15.31101)
+light_energy = 2.51
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=1763416144]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.613926, -10.503454, 0)
+mesh = SubResource("BoxMesh_a202f")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Ground" unique_id=16920561]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/CharacterBody3D" unique_id=1513332543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.030029297, 0.15216112, -0.17375505)
+shape = SubResource("BoxShape3D_noarx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1036674392]
+transform = Transform3D(-0.9971498, 0, -0.07544863, 0, 1, 0, 0.07544863, 0, -0.9971498, 1.7957172, 5.6290474, 7.539059)
+mesh = SubResource("TextMesh_a202f")
+
+[node name="Fahhhhhhhhhhhhhh" type="AudioStreamPlayer3D" parent="." unique_id=238335496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.481331, 0.24087143, -21.884375)
+stream = ExtResource("2_noarx")
+autoplay = true
+
+[node name="Timer" type="Timer" parent="." unique_id=1977627365]
+process_callback = 0
+wait_time = 3.05
+autostart = true
