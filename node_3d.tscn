@@ -53,6 +53,8 @@ mesh = SubResource("TextMesh_a202f")
 [node name="Fahhhhhhhhhhhhhh" type="AudioStreamPlayer3D" parent="." unique_id=238335496]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.481331, 0.24087143, -21.884375)
 stream = ExtResource("2_noarx")
+volume_db = 80.0
+autoplay = true
 
 [node name="among_us" parent="." unique_id=1833611760 instance=ExtResource("3_a0tk4")]
-transform = Transform3D(-238.58939, 0, -0.12591909, 0, 157.18059, 0, 0.12489675, 0, -240.54242, -8.226114, -9.8507, 18.288847)
+transform = Transform3D(-290.68198, 0, -0.17105067, 0, 357.79, 0, 0.15216616, 0, -326.75696, -5.666, -9.071, 18.289)
