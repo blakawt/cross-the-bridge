@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://br01chminlckq" path="res://player.tscn" id="1_7xctj"]
 [ext_resource type="AudioStream" uid="uid://21uq5s3sxg" path="res://fahhhhhhhhhhhhhh.mp3" id="2_noarx"]
 [ext_resource type="PackedScene" uid="uid://dtormppdta13k" path="res://among_us.fbx" id="3_a0tk4"]
+[ext_resource type="PackedScene" uid="uid://cg3m5qnyxjev4" path="res://sky/examples/sky.tscn" id="4_r3fl7"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_a202f"]
 
@@ -34,6 +35,7 @@ mesh = SubResource("CapsuleMesh_a202f")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1775195311]
 transform = Transform3D(1, 0, 0, 0, -0.7369944, 0.67589897, 0, -0.67589897, -0.7369944, -5.3489056, 3.6662102, 19.45368)
+visible = false
 light_energy = 2.21
 
 [node name="Ground" type="MeshInstance3D" parent="." unique_id=1763416144]
@@ -59,3 +61,6 @@ autoplay = true
 
 [node name="among_us" parent="." unique_id=1833611760 instance=ExtResource("3_a0tk4")]
 transform = Transform3D(-290.68198, 0, -0.17105067, 0, 357.79, 0, 0.15216616, 0, -326.75696, -5.666, -9.071, 18.289)
+
+[node name="Sky" parent="." unique_id=1793936949 instance=ExtResource("4_r3fl7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.376834, 2.9336662, -2.6829038)
