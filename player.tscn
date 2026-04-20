@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b5857tixmwb03"]
 
 [ext_resource type="Script" uid="uid://2amyyqcocgv6" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://v02fgctmqxs3" path="res://character_body_3d.gd" id="2_onrkg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
@@ -16,9 +17,6 @@ script = ExtResource("1_4flbx")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1738128359]
 shape = SubResource("CapsuleShape3D_sh265")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=363129103]
-mesh = SubResource("CapsuleMesh_onrkg")
-
 [node name="Camera_Controller" type="Node3D" parent="." unique_id=1760717658]
 
 [node name="Camera_Target" type="Node3D" parent="Camera_Controller" unique_id=1956244782]
@@ -28,3 +26,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45824564, -0.22195792)
 
 [node name="Camera3D2" type="Camera3D" parent="Camera_Controller/Camera_Target" unique_id=1061703124]
 transform = Transform3D(1, 0, 0, 0, 0.975753, 0.218876, 0, -0.218876, 0.975753, 0, 1.36701, 2.25437)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1873104567]
+script = ExtResource("2_onrkg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=363129103]
+mesh = SubResource("CapsuleMesh_onrkg")
+skeleton = NodePath("../..")
