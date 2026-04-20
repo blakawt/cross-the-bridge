@@ -6,6 +6,7 @@ const JUMP_VELOCITY = 4.5
 @export var sensivity = 0.3
 var fov = false
 var lerp_speed= 1
+const VOID_Y = -20.0
 
 
 func _ready():
@@ -51,6 +52,9 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+	if global_position.y < VOID_Y:
+		get_tree().reload_current_scene()
 
 
 func _on_area_3d_body_entered(body):
