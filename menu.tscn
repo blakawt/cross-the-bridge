@@ -126,8 +126,6 @@ shader_parameter/base_color_mod = Color(0.4, 0.6, 1, 1)
 shader_parameter/speed_multiplier = 0.1
 shader_parameter/num_layers = 4.0
 
-[sub_resource type="Theme" id="Theme_ouk20"]
-
 [node name="Control" type="Control" unique_id=873226453]
 layout_mode = 3
 anchors_preset = 15
@@ -153,17 +151,6 @@ offset_top = 306.0
 offset_right = 651.0
 offset_bottom = 346.0
 
-[node name="Label" type="Label" parent="." unique_id=1918365203]
-layout_mode = 0
-offset_left = 424.0
-offset_top = 144.0
-offset_right = 718.0
-offset_bottom = 285.0
-theme = SubResource("Theme_ouk20")
-theme_override_font_sizes/font_size = 50
-text = "Sussy game 
-"
-
 [node name="Arthurhale8BitVideoGameMusic289970" type="AudioStreamPlayer2D" parent="." unique_id=312111610]
 position = Vector2(500, 368)
 stream = ExtResource("2_ouk20")
@@ -173,17 +160,16 @@ parameters/looping = true
 
 [node name="Button" type="Button" parent="." unique_id=1237248789]
 layout_mode = 0
-offset_left = 500.0
-offset_top = 306.0
-offset_right = 651.0
-offset_bottom = 479.0
+offset_left = 384.0
+offset_top = 192.0
+offset_right = 768.0
+offset_bottom = 445.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
 theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0.5181232, 0.45217043, 1)
 theme_override_font_sizes/font_size = 120
-text = "ඞ
-"
+text = "▶️"
 flat = true
 
 [node name="Quit" type="Button" parent="." unique_id=2075634701]
