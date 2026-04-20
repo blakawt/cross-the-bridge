@@ -42,10 +42,10 @@ height = 2.4852295
 radius = 0.4345703
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r0du0"]
-size = Vector3(3.0205078, 1, 7.810669)
+size = Vector3(3.0205078, 0.68756104, 7.810669)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_trn2v"]
-size = Vector3(22.161001, 3.8289113, 12.755784)
+size = Vector3(22.161001, 3.8138697, 12.755784)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_03owx"]
 size = Vector3(21.512169, 3.4870324, 4.1843424)
@@ -57,7 +57,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.68127, 0)
 
 [node name="GeoffreyburchManIsHeMegaGlbml22045" type="AudioStreamPlayer" parent="." unique_id=881143380]
 stream = ExtResource("2_uu6xs")
-volume_db = -0.155
+volume_db = -5.0
 autoplay = true
 parameters/looping = true
 
@@ -118,16 +118,18 @@ shape = SubResource("CylinderShape3D_lgr22")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ColisionLevel" unique_id=2115226737]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57768893, 1.3508263, -8.895749)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57768893, 1.1946068, -8.895749)
 shape = SubResource("BoxShape3D_r0du0")
 debug_color = Color(0, 0.54901963, 0.91764706, 1)
 
 [node name="CollisionShape3D11" type="CollisionShape3D" parent="ColisionLevel" unique_id=824744457]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.937685, -0.38191342, -0.21313047)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.937685, -0.40450907, -0.21313)
 shape = SubResource("BoxShape3D_trn2v")
 debug_color = Color(0, 0.54901963, 0.91764706, 1)
 
-[node name="CollisionShape3D12" type="CollisionShape3D" parent="ColisionLevel" unique_id=1289926220]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.31647, -0.7439048, -8.64269)
+[node name="DieIfTouthed" type="Node3D" parent="." unique_id=1476806650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.31647, -0.63597584, -8.64269)
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="DieIfTouthed" unique_id=1289926220]
 shape = SubResource("BoxShape3D_03owx")
 debug_color = Color(0.9474059, 3.778264e-06, 1.732707e-06, 1)
