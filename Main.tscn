@@ -5,6 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://c8c2r1xhw1g35" path="res://model 3D/mondes du projet teste.blend" id="3_r0du0"]
 
 [sub_resource type="Environment" id="Environment_r0du0"]
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+volumetric_fog_albedo = Color(0.7666196, 0.76661956, 0.76661956, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r0du0"]
+size = Vector3(21.773193, 2.2348633, 22.61139)
 
 [node name="Node3D" type="Node3D" unique_id=704907988]
 
@@ -16,7 +22,7 @@ stream = ExtResource("2_uu6xs")
 autoplay = true
 parameters/looping = true
 
-[node name="mondes du projet teste" parent="." unique_id=1493046938 instance=ExtResource("3_r0du0")]
+[node name="mondes du projet teste" parent="." unique_id=1012298957 instance=ExtResource("3_r0du0")]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -22.336155, -3.706985, -28.426853)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=499734688]
@@ -24,3 +30,10 @@ environment = SubResource("Environment_r0du0")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1243905667]
 transform = Transform3D(1, 0, 0, 0, 0.66636336, 0.74562716, 0, -0.74562716, 0.66636336, 0, 15.4544115, -15.112167)
+
+[node name="ColisionLevel" type="CharacterBody3D" parent="." unique_id=209248370]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ColisionLevel" unique_id=1721881570]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1341553, 0.61743164, -4.8036194)
+shape = SubResource("BoxShape3D_r0du0")
+debug_color = Color(0.9843137, 0, 0.35686275, 1)
