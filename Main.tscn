@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b5857tixmwb03" path="res://player.tscn" id="1_uu6xs"]
 [ext_resource type="AudioStream" uid="uid://cpxvefguhv370" path="res://Assets/geoffreyburch-man-is-he-mega-glbml-22045.mp3" id="2_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://c8c2r1xhw1g35" path="res://model 3D/mondes du projet teste.blend" id="3_r0du0"]
-[ext_resource type="Script" path="res://die_if_touthed.gd" id="4_cm0pq"]
+[ext_resource type="Script" uid="uid://covjxe2ts8xvi" path="res://die_if_touthed.gd" id="4_cm0pq"]
 
 [sub_resource type="Environment" id="Environment_r0du0"]
 volumetric_fog_enabled = true
