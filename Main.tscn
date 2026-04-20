@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b5857tixmwb03" path="res://player.tscn" id="1_uu6xs"]
 [ext_resource type="AudioStream" uid="uid://cpxvefguhv370" path="res://Assets/geoffreyburch-man-is-he-mega-glbml-22045.mp3" id="2_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://c8c2r1xhw1g35" path="res://model 3D/mondes du projet teste.blend" id="3_r0du0"]
-[ext_resource type="Script" uid="uid://covjxe2ts8xvi" path="res://die_if_touthed.gd" id="4_cm0pq"]
+[ext_resource type="Script" path="res://die_if_touthed.gd" id="4_cm0pq"]
 
 [sub_resource type="Environment" id="Environment_r0du0"]
 volumetric_fog_enabled = true
@@ -69,7 +69,7 @@ transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -22.336155, -3.706985, 
 environment = SubResource("Environment_r0du0")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1243905667]
-transform = Transform3D(1, 0, 0, 0, 0.66636336, 0.74562716, 0, -0.74562716, 0.66636336, 0, 15.4544115, -15.112167)
+transform = Transform3D(-0.9603521, -0.2078733, 0.18577535, 0, 0.66636336, 0.74562716, -0.27878988, 0.71606463, -0.6399435, 0, 15.4544115, -15.112167)
 
 [node name="ColisionsStuff" type="CharacterBody3D" parent="." unique_id=209248370]
 
