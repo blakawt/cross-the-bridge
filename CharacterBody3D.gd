@@ -58,3 +58,7 @@ func _on_area_3d_body_entered(body):
 		get_tree().change_scene_to_file("res://node_3d.tscn")
 
 	pass # Replace with function body.
+
+
+func _on_die_i_ffallen_tree_entered() -> void:
+	pass # Replace with function body.

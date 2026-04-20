@@ -53,8 +53,3 @@ mesh = SubResource("TextMesh_a202f")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.481331, 0.24087143, -21.884375)
 stream = ExtResource("2_noarx")
 autoplay = true
-
-[node name="Timer" type="Timer" parent="." unique_id=1977627365]
-process_callback = 0
-wait_time = 3.05
-autostart = true
