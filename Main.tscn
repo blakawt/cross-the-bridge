@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dplidmts3wqqd"]
+
+[ext_resource type="PackedScene" uid="uid://b5857tixmwb03" path="res://player.tscn" id="1_37kl0"]
+[ext_resource type="AudioStream" uid="uid://cy8q8nla3fflv" path="res://Assets/arthurhale-8bit-video-game-music-289970.mp3" id="2_8uh7m"]
+
+[node name="Node3D" type="Node3D" unique_id=704907988]
+
+[node name="CharacterBody3D" parent="." unique_id=552791275 instance=ExtResource("1_37kl0")]
+
+[node name="Music" type="Node3D" parent="." unique_id=1688536983]
+
+[node name="GeoffreyburchManIsHeMegaGlbml22045" type="AudioStreamPlayer3D" parent="Music" unique_id=1421399624]
+autoplay = true
+
+[node name="Arthurhale8BitVideoGameMusic289970" type="AudioStreamPlayer" parent="Music" unique_id=1851712512]
+stream = ExtResource("2_8uh7m")

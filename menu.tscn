@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://uheg4xo1xux7"]
 
 [ext_resource type="Script" uid="uid://bfotdudptitl1" path="res://menu.gd" id="1_lti8b"]
+[ext_resource type="AudioStream" uid="uid://cy8q8nla3fflv" path="res://Assets/arthurhale-8bit-video-game-music-289970.mp3" id="2_ouk20"]
 
 [node name="Control" type="Control" unique_id=873226453]
 layout_mode = 3
@@ -20,7 +21,14 @@ offset_bottom = 346.0
 
 [node name="Button" type="Button" parent="VBoxContainer" unique_id=1237248789]
 layout_mode = 2
-text = "Play"
+theme_override_colors/font_color = Color(1, 0.8278397, 0.7989097, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "ඞ
+"
+flat = true
 
 [node name="Label" type="Label" parent="." unique_id=1918365203]
 layout_mode = 0
@@ -29,6 +37,14 @@ offset_top = 144.0
 offset_right = 734.0
 offset_bottom = 213.0
 theme_override_font_sizes/font_size = 50
-text = "Sussy game"
+text = "Sussy game 
+"
+
+[node name="Arthurhale8BitVideoGameMusic289970" type="AudioStreamPlayer2D" parent="." unique_id=312111610]
+position = Vector2(500, 368)
+stream = ExtResource("2_ouk20")
+autoplay = true
+stream_paused = true
+parameters/looping = true
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
