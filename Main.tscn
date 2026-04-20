@@ -13,6 +13,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.68127, 0)
 
 [node name="GeoffreyburchManIsHeMegaGlbml22045" type="AudioStreamPlayer" parent="." unique_id=881143380]
 stream = ExtResource("2_uu6xs")
+volume_db = -0.155
 autoplay = true
 parameters/looping = true
 
