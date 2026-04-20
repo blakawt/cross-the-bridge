@@ -1,13 +1,18 @@
 [gd_scene format=3 uid="uid://b5857tixmwb03"]
 
 [ext_resource type="Script" uid="uid://2amyyqcocgv6" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Shader" uid="uid://b1tep47vnx372" path="res://player.gdshader" id="2_onrkg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4flbx"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i3pqv"]
+shader = ExtResource("2_onrkg")
+shader_parameter/mouse = Vector2(0, 0)
+shader_parameter/fft = 0.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_onrkg"]
-material = SubResource("StandardMaterial3D_4flbx")
+material = SubResource("ShaderMaterial_i3pqv")
+uv2_padding = 0.0
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=1043052854]
 script = ExtResource("1_4flbx")
