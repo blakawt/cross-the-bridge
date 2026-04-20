@@ -11,5 +11,10 @@ func _on_quit_pressed() -> void:
 
 
 
+var muted := false
+
 func _on_mute_music_pressed() -> void:
-	pass # Replace with function body.
+	var bus_index = AudioServer.get_bus_index("Master")
+	
+	muted = !muted
+	AudioServer.set_bus_mute(bus_index, muted)
