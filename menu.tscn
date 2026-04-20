@@ -44,7 +44,6 @@ text = "Sussy game
 position = Vector2(500, 368)
 stream = ExtResource("2_ouk20")
 autoplay = true
-stream_paused = true
 parameters/looping = true
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
