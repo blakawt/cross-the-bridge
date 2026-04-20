@@ -14,5 +14,10 @@ stream = ExtResource("2_uu6xs")
 autoplay = true
 parameters/looping = true
 
-[node name="mondes du projet teste" parent="." unique_id=1422626493 instance=ExtResource("3_r0du0")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -17.968142, -5.433531, -24.508366)
+[node name="mondes du projet teste" parent="." unique_id=883610633 instance=ExtResource("3_r0du0")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -22.336155, -3.706985, -28.426853)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=499734688]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1243905667]
+transform = Transform3D(1, 0, 0, 0, 0.66636336, 0.74562716, 0, -0.74562716, 0.66636336, 0, 15.4544115, -15.112167)
