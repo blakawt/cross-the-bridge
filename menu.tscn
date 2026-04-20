@@ -3,6 +3,107 @@
 [ext_resource type="Script" uid="uid://bfotdudptitl1" path="res://menu.gd" id="1_lti8b"]
 [ext_resource type="AudioStream" uid="uid://cy8q8nla3fflv" path="res://Assets/arthurhale-8bit-video-game-music-289970.mp3" id="2_ouk20"]
 
+[sub_resource type="Shader" id="Shader_ouk20"]
+code = "shader_type canvas_item;
+
+uniform float time_scale = 1.0;
+uniform sampler2D iChannel0; // audio ou texture
+
+#define S(a,b,t) smoothstep(a,b,t)
+#define NUM_LAYERS 4.0
+
+float N21(vec2 p){
+    vec3 a = fract(vec3(p.xyx) * vec3(213.897, 653.453, 253.098));
+    a += dot(a, a.yzx + 79.76);
+    return fract((a.x + a.y) * a.z);
+}
+
+vec2 GetPos(vec2 id, vec2 offs, float t){
+    float n = N21(id+offs);
+    float n1 = fract(n*10.0);
+    float n2 = fract(n*100.0);
+    float a = t+n;
+    return offs + vec2(sin(a*n1), cos(a*n2))*0.4;
+}
+
+float df_line(vec2 a, vec2 b, vec2 p){
+    vec2 pa = p - a;
+    vec2 ba = b - a;
+    float h = clamp(dot(pa,ba)/dot(ba,ba),0.0,1.0);
+    return length(pa - ba*h);
+}
+
+float line(vec2 a, vec2 b, vec2 uv){
+    float r1 = 0.04;
+    float r2 = 0.01;
+
+    float d = df_line(a,b,uv);
+    float d2 = length(a-b);
+    float fade = S(1.5,0.5,d2);
+    fade += S(0.05,0.02,abs(d2-0.75));
+
+    return S(r1,r2,d)*fade;
+}
+
+float NetLayer(vec2 st, float n, float t){
+    vec2 id = floor(st)+n;
+    st = fract(st)-0.5;
+
+    vec2 p[9];
+    int i = 0;
+
+    for(float y=-1.0;y<=1.0;y++){
+        for(float x=-1.0;x<=1.0;x++){
+            p[i++] = GetPos(id, vec2(x,y), t);
+        }
+    }
+
+    float m = 0.0;
+    float sparkle = 0.0;
+
+    for(int i=0;i<9;i++){
+        m += line(p[4], p[i], st);
+
+        float d = length(st-p[i]);
+        float s = (0.005/(d*d));
+
+        float pulse = sin((fract(p[i].x)+fract(p[i].y)+t)*5.0)*0.4+0.6;
+        pulse = pow(pulse,20.0);
+
+        sparkle += s * pulse;
+    }
+
+    return m + sparkle;
+}
+
+void fragment(){
+vec2 uv = (FRAGCOORD.xy - 0.5 * (1.0 / SCREEN_PIXEL_SIZE)) / (1.0 / SCREEN_PIXEL_SIZE).y;
+
+    float t = TIME * 0.1;
+
+    float m = 0.0;
+
+    for(float i=0.0;i<1.0;i+=1.0/NUM_LAYERS){
+        float z = fract(t+i);
+        float size = mix(15.0,1.0,z);
+        float fade = S(0.0,0.6,z)*S(1.0,0.8,z);
+
+        m += fade * NetLayer(uv*size, i, t);
+    }
+
+    float colv = texture(iChannel0, vec2(0.7,0.0)).x;
+
+    vec3 col = vec3(0.5+sin(t),0.5+cos(t),0.5-sin(t));
+    col *= m;
+    col += colv * 0.5;
+
+    COLOR = vec4(col,1.0);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mae5d"]
+shader = SubResource("Shader_ouk20")
+shader_parameter/time_scale = 1.0
+
 [sub_resource type="Theme" id="Theme_ouk20"]
 
 [node name="Control" type="Control" unique_id=873226453]
@@ -13,6 +114,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lti8b")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1495124341]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_mae5d")
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1358070686]
 layout_mode = 0
@@ -56,7 +166,7 @@ flat = true
 
 [node name="Quit" type="Button" parent="." unique_id=2075634701]
 layout_mode = 0
-offset_right = 27.0
+offset_right = 49.0
 offset_bottom = 50.0
 theme_override_font_sizes/font_size = 30
 text = "❌"
