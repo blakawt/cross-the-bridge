@@ -21,10 +21,10 @@ offset_bottom = 346.0
 
 [node name="Button" type="Button" parent="VBoxContainer" unique_id=1237248789]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.8278397, 0.7989097, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.5181232, 0.45217043, 1)
 theme_override_font_sizes/font_size = 120
 text = "ඞ
 "
@@ -32,10 +32,10 @@ flat = true
 
 [node name="Label" type="Label" parent="." unique_id=1918365203]
 layout_mode = 0
-offset_left = 416.0
+offset_left = 424.0
 offset_top = 144.0
-offset_right = 734.0
-offset_bottom = 213.0
+offset_right = 718.0
+offset_bottom = 285.0
 theme_override_font_sizes/font_size = 50
 text = "Sussy game 
 "

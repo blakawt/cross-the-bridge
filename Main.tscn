@@ -2,12 +2,30 @@
 
 [ext_resource type="PackedScene" uid="uid://b5857tixmwb03" path="res://player.tscn" id="1_uu6xs"]
 [ext_resource type="AudioStream" uid="uid://cpxvefguhv370" path="res://Assets/geoffreyburch-man-is-he-mega-glbml-22045.mp3" id="2_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://c8c2r1xhw1g35" path="res://model 3D/mondes du projet teste.blend" id="3_r0du0"]
+
+[sub_resource type="Environment" id="Environment_r0du0"]
+fog_mode = 1
+fog_light_energy = 0.85
+fog_density = 1.0
+volumetric_fog_density = 0.655
+volumetric_fog_length = 72.5
 
 [node name="Node3D" type="Node3D" unique_id=704907988]
 
-[node name="CharacterBody3D" parent="." unique_id=552791275 instance=ExtResource("1_uu6xs")]
+[node name="Player" parent="." unique_id=552791275 instance=ExtResource("1_uu6xs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.68127, 0)
 
 [node name="GeoffreyburchManIsHeMegaGlbml22045" type="AudioStreamPlayer" parent="." unique_id=881143380]
 stream = ExtResource("2_uu6xs")
 autoplay = true
 parameters/looping = true
+
+[node name="mondes du projet teste" parent="." unique_id=883610633 instance=ExtResource("3_r0du0")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -22.336155, -3.706985, -28.426853)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=499734688]
+environment = SubResource("Environment_r0du0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1243905667]
+transform = Transform3D(1, 0, 0, 0, 0.66636336, 0.74562716, 0, -0.74562716, 0.66636336, 0, 15.4544115, -15.112167)
