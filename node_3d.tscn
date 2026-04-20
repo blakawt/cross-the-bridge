@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://br01chminlckq" path="res://player.tscn" id="1_7xctj"]
 [ext_resource type="AudioStream" uid="uid://21uq5s3sxg" path="res://fahhhhhhhhhhhhhh.mp3" id="2_noarx"]
+[ext_resource type="PackedScene" uid="uid://dtormppdta13k" path="res://among_us.fbx" id="3_a0tk4"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_a202f"]
 
@@ -32,8 +33,8 @@ mesh = SubResource("CapsuleMesh_a202f")
 [node name="CharacterBody3D" type="CharacterBody3D" parent="player" unique_id=166953061]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1775195311]
-transform = Transform3D(5.118707, 0, 0, 0, -0.7369944, 0.67589897, 0, -0.67589897, -0.7369944, -5.955553, 20.591022, -15.31101)
-light_energy = 2.51
+transform = Transform3D(1, 0, 0, 0, -0.7369944, 0.67589897, 0, -0.67589897, -0.7369944, -5.3489056, 3.6662102, 19.45368)
+light_energy = 2.21
 
 [node name="Ground" type="MeshInstance3D" parent="." unique_id=1763416144]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.613926, -10.503454, 0)
@@ -52,3 +53,6 @@ mesh = SubResource("TextMesh_a202f")
 [node name="Fahhhhhhhhhhhhhh" type="AudioStreamPlayer3D" parent="." unique_id=238335496]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.481331, 0.24087143, -21.884375)
 stream = ExtResource("2_noarx")
+
+[node name="among_us" parent="." unique_id=1833611760 instance=ExtResource("3_a0tk4")]
+transform = Transform3D(-238.58939, 0, -0.12591909, 0, 157.18059, 0, 0.12489675, 0, -240.54242, -8.226114, -9.8507, 18.288847)
