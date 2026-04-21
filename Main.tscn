@@ -4,11 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://cpxvefguhv370" path="res://Assets/geoffreyburch-man-is-he-mega-glbml-22045.mp3" id="2_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://c8c2r1xhw1g35" path="res://model 3D/mondes du projet teste.blend" id="3_r0du0"]
 [ext_resource type="Script" uid="uid://covjxe2ts8xvi" path="res://die_if_touthed.gd" id="4_cm0pq"]
-
-[sub_resource type="Environment" id="Environment_r0du0"]
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.0
-volumetric_fog_albedo = Color(0.7666196, 0.76661956, 0.76661956, 1)
+[ext_resource type="PackedScene" uid="uid://cg3m5qnyxjev4" path="res://Assets/sky/examples/sky.tscn" id="5_fos0i"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cm0pq"]
 size = Vector3(21.81712, 4.317721, 4.1843424)
@@ -67,12 +63,6 @@ parameters/looping = true
 
 [node name="mondes du projet teste" parent="." unique_id=1012298957 instance=ExtResource("3_r0du0")]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 21.120628, -65.2999, -28.265644)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=499734688]
-environment = SubResource("Environment_r0du0")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1243905667]
-transform = Transform3D(-0.9603521, -0.2078733, 0.18577535, 0, 0.66636336, 0.74562716, -0.27878988, 0.71606463, -0.6399435, 0, 15.4544115, -15.112167)
 
 [node name="ColisionsStuff" type="CharacterBody3D" parent="." unique_id=209248370]
 
@@ -144,5 +134,8 @@ debug_color = Color(0.9474059, 3.778264e-06, 1.732707e-06, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44952393, 1.4899976, -8.376809)
 shape = SubResource("BoxShape3D_wkp8b")
 debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="Sky" parent="." unique_id=1875100479 instance=ExtResource("5_fos0i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1963325, 9.676142, -10.29052)
 
 [connection signal="body_entered" from="ColisionsStuff/DieIfTouthed" to="ColisionsStuff/DieIfTouthed" method="_on_body_entered"]
