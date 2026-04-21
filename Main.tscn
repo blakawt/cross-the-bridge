@@ -159,7 +159,7 @@ shape = SubResource("BoxShape3D_wkp8b")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sky2" parent="ColisionsStuff" unique_id=749473734 instance=ExtResource("5_fos0i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8183002, 3.173088, -7.499509)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8183002, 3.173088, -7.7789745)
 
 [node name="Control" type="Control" parent="." unique_id=123061129]
 layout_mode = 3
