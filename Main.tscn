@@ -46,6 +46,9 @@ size = Vector3(22.161001, 4.2224865, 12.337139)
 [sub_resource type="BoxShape3D" id="BoxShape3D_03owx"]
 size = Vector3(21.512169, 3.764024, 4.1843424)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_20pc6"]
+size = Vector3(1047.4313, 3.764024, 760.4826)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_wkp8b"]
 size = Vector3(3.3814697, 0.69299316, 8.5056)
 
@@ -152,6 +155,11 @@ script = ExtResource("4_cm0pq")
 [node name="CollisionShape3D12" type="CollisionShape3D" parent="ColisionsStuff/DieIfTouthed" unique_id=1289926220]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1384958, 0)
 shape = SubResource("BoxShape3D_03owx")
+debug_color = Color(0.9474059, 3.778264e-06, 1.732707e-06, 1)
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="ColisionsStuff/DieIfTouthed" unique_id=2136180949]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.71404, -68.02631, 47.24644)
+shape = SubResource("BoxShape3D_20pc6")
 debug_color = Color(0.9474059, 3.778264e-06, 1.732707e-06, 1)
 
 [node name="CollisionShape3D12" type="CollisionShape3D" parent="ColisionsStuff" unique_id=591997919]
