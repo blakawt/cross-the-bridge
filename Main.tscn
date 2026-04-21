@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b5857tixmwb03" path="res://player.tscn" id="1_uu6xs"]
 [ext_resource type="AudioStream" uid="uid://cpxvefguhv370" path="res://Assets/geoffreyburch-man-is-he-mega-glbml-22045.mp3" id="2_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://c8c2r1xhw1g35" path="res://model 3D/mondes du projet teste.blend" id="3_r0du0"]
-[ext_resource type="Script" path="res://die_if_touthed.gd" id="4_cm0pq"]
+[ext_resource type="Script" uid="uid://covjxe2ts8xvi" path="res://die_if_touthed.gd" id="4_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://cg3m5qnyxjev4" path="res://Assets/sky/examples/sky.tscn" id="5_fos0i"]
 [ext_resource type="Script" uid="uid://b8w4c37iygagr" path="res://control.gd" id="6_3dxm6"]
 
@@ -160,12 +160,6 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sky2" parent="ColisionsStuff" unique_id=749473734 instance=ExtResource("5_fos0i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8183002, 3.173088, -7.499509)
-
-[node name="Sky" parent="ColisionsStuff/Sky2" unique_id=960078066 instance=ExtResource("5_fos0i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1748338, 0.4336605, 7.5276804)
-
-[node name="Sky2" parent="." unique_id=730182409 instance=ExtResource("5_fos0i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.456931, -2.7328253, -2.2782192)
 
 [node name="Control" type="Control" parent="." unique_id=123061129]
 layout_mode = 3
