@@ -191,7 +191,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.295354, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=53093384]
 transform = Transform3D(0.1932037, -0.9731312, 0.12525207, 0.0025844018, 0.12816156, 0.99174994, -0.9811553, -0.191286, 0.027276253, 0.19806552, 18.873325, -2.1792002)
-light_energy = 0.524
+light_energy = 0.3
 
 [connection signal="body_entered" from="ColisionsStuff/DieIfTouthed" to="ColisionsStuff/DieIfTouthed" method="_on_body_entered"]
 [connection signal="pressed" from="Control/MuteMusic" to="Control" method="_on_mute_music_pressed"]
