@@ -162,7 +162,7 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.456931, -2.7328253, -2.2782192)
 
 [node name="Sky" parent="ColisionsStuff" unique_id=960078066 instance=ExtResource("5_fos0i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.104586, 2.50813, -9.217815)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.108775616, 2.228819, -8.829058)
 
 [node name="Sky2" parent="ColisionsStuff" unique_id=749473734 instance=ExtResource("5_fos0i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.740726, 3.173088, -7.499509)
