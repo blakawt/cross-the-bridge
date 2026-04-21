@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://covjxe2ts8xvi" path="res://die_if_touthed.gd" id="4_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://cg3m5qnyxjev4" path="res://Assets/sky/examples/sky.tscn" id="5_fos0i"]
 [ext_resource type="Script" uid="uid://b8w4c37iygagr" path="res://control.gd" id="6_3dxm6"]
-[ext_resource type="Shader" uid="uid://bfwkfgq7cnl4q" path="res://fire.gdshader" id="7_lgr22"]
+[ext_resource type="PackedScene" uid="uid://bm7vcvgua2xi7" path="res://Assets/Fire_Lowpoly.tscn" id="7_lgr22"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cm0pq"]
 size = Vector3(21.81712, 4.317721, 4.1843424)
@@ -48,17 +48,6 @@ size = Vector3(21.512169, 3.764024, 4.1843424)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wkp8b"]
 size = Vector3(3.3814697, 0.69299316, 8.5056)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3dxm6"]
-render_priority = 0
-shader = ExtResource("7_lgr22")
-shader_parameter/speed = 1.5
-shader_parameter/height = 1.0
-shader_parameter/color_bottom = Color(1, 0.5, 0, 1)
-shader_parameter/color_top = Color(1, 1, 0, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_lgr22"]
-material = SubResource("ShaderMaterial_3dxm6")
 
 [node name="Node3D" type="Node3D" unique_id=704907988]
 
@@ -205,9 +194,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.295354, 0)
 transform = Transform3D(0.1932037, -0.9731312, 0.12525207, 0.0025844018, 0.12816156, 0.99174994, -0.9811553, -0.191286, 0.027276253, 0.19806552, 18.873325, -2.1792002)
 light_energy = 0.3
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1761922983]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.012566, 2.6716542, -0.3250699)
-mesh = SubResource("CapsuleMesh_lgr22")
+[node name="Fire" parent="." unique_id=1196312945 instance=ExtResource("7_lgr22")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9.185909, 1.377228, -0.39985013)
 
 [connection signal="body_entered" from="ColisionsStuff/DieIfTouthed" to="ColisionsStuff/DieIfTouthed" method="_on_body_entered"]
 [connection signal="pressed" from="Control/MuteMusic" to="Control" method="_on_mute_music_pressed"]
