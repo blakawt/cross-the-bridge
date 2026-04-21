@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b5857tixmwb03" path="res://player.tscn" id="1_uu6xs"]
 [ext_resource type="AudioStream" uid="uid://cpxvefguhv370" path="res://Assets/geoffreyburch-man-is-he-mega-glbml-22045.mp3" id="2_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://c8c2r1xhw1g35" path="res://model 3D/mondes du projet teste.blend" id="3_r0du0"]
-[ext_resource type="Script" path="res://die_if_touthed.gd" id="4_cm0pq"]
+[ext_resource type="Script" uid="uid://covjxe2ts8xvi" path="res://die_if_touthed.gd" id="4_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://cg3m5qnyxjev4" path="res://Assets/sky/examples/sky.tscn" id="5_fos0i"]
 [ext_resource type="Script" uid="uid://b8w4c37iygagr" path="res://control.gd" id="6_3dxm6"]
 
@@ -158,15 +158,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44952393, 1.4899976, -8.376
 shape = SubResource("BoxShape3D_wkp8b")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
-[node name="Sky3" parent="ColisionsStuff" unique_id=730182409 instance=ExtResource("5_fos0i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.456931, -2.7328253, -2.2782192)
-
-[node name="Sky" parent="ColisionsStuff" unique_id=960078066 instance=ExtResource("5_fos0i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.108775616, 2.228819, -8.829058)
-
-[node name="Sky2" parent="ColisionsStuff" unique_id=749473734 instance=ExtResource("5_fos0i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.740726, 3.173088, -7.499509)
-
 [node name="Control" type="Control" parent="." unique_id=123061129]
 layout_mode = 3
 anchors_preset = 15
@@ -194,6 +185,13 @@ offset_bottom = 50.0
 theme_override_font_sizes/font_size = 30
 text = "❌"
 flat = true
+
+[node name="Sky" parent="." unique_id=905391040 instance=ExtResource("5_fos0i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.295354, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=53093384]
+transform = Transform3D(0.1932037, -0.9731312, 0.12525207, 0.0025844018, 0.12816156, 0.99174994, -0.9811553, -0.191286, 0.027276253, 0.19806552, 18.873325, -2.1792002)
+light_energy = 0.524
 
 [connection signal="body_entered" from="ColisionsStuff/DieIfTouthed" to="ColisionsStuff/DieIfTouthed" method="_on_body_entered"]
 [connection signal="pressed" from="Control/MuteMusic" to="Control" method="_on_mute_music_pressed"]
