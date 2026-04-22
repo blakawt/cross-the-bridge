@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://6o2w2iwswrm1"]
+
+[ext_resource type="PackedScene" uid="uid://b5857tixmwb03" path="res://player.tscn" id="1_du06y"]
+
+[node name="Desert" type="Node3D" unique_id=800609399]
+
+[node name="Player" parent="." unique_id=1043052854 instance=ExtResource("1_du06y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.647566, 0)
