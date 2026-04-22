@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://cpxvefguhv370" path="res://Assets/geoffreyburch-man-is-he-mega-glbml-22045.mp3" id="2_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://c8c2r1xhw1g35" path="res://model 3D/mondes du projet teste.blend" id="3_r0du0"]
 [ext_resource type="Script" uid="uid://covjxe2ts8xvi" path="res://die_if_touthed.gd" id="4_cm0pq"]
+[ext_resource type="Script" uid="uid://dgyjcynrlm8b4" path="res://next_level.gd" id="4_trn2v"]
 [ext_resource type="PackedScene" uid="uid://cg3m5qnyxjev4" path="res://Assets/sky/examples/sky.tscn" id="5_fos0i"]
 [ext_resource type="Script" uid="uid://b8w4c37iygagr" path="res://control.gd" id="6_3dxm6"]
 [ext_resource type="PackedScene" uid="uid://bm7vcvgua2xi7" path="res://Assets/Fire_Lowpoly.tscn" id="7_lgr22"]
@@ -43,8 +44,8 @@ size = Vector3(3.0205078, 0.68756104, 7.810669)
 [sub_resource type="BoxShape3D" id="BoxShape3D_trn2v"]
 size = Vector3(22.161001, 4.2224865, 12.337139)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_03owx"]
-size = Vector3(21.512169, 3.764024, 4.1843424)
+[sub_resource type="BoxShape3D" id="BoxShape3D_5vvyt"]
+size = Vector3(21.773039, 2.4524364, 4.223084)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_20pc6"]
 size = Vector3(1047.4313, 3.764024, 760.4826)
@@ -52,10 +53,10 @@ size = Vector3(1047.4313, 3.764024, 760.4826)
 [sub_resource type="BoxShape3D" id="BoxShape3D_wkp8b"]
 size = Vector3(3.3814697, 0.69299316, 8.5056)
 
-[node name="Node3D" type="Node3D" unique_id=704907988]
+[sub_resource type="BoxShape3D" id="BoxShape3D_c6i3y"]
+size = Vector3(5.8353176, 2.9312243, 2.48642)
 
-[node name="Player" parent="." unique_id=552791275 instance=ExtResource("1_uu6xs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.68127, 0)
+[node name="Node3D" type="Node3D" unique_id=704907988]
 
 [node name="GeoffreyburchManIsHeMegaGlbml22045" type="AudioStreamPlayer" parent="." unique_id=881143380]
 stream = ExtResource("2_uu6xs")
@@ -63,7 +64,7 @@ volume_db = -5.0
 autoplay = true
 parameters/looping = true
 
-[node name="mondes du projet teste" parent="." unique_id=1012298957 instance=ExtResource("3_r0du0")]
+[node name="mondes du projet teste" parent="." unique_id=1240162023 instance=ExtResource("3_r0du0")]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 20.995481, -65.200325, -28.228947)
 
 [node name="ColisionsStuff" type="CharacterBody3D" parent="." unique_id=209248370]
@@ -119,22 +120,22 @@ shape = SubResource("CylinderShape3D_r0du0")
 debug_color = Color(0, 0.54901963, 0.91764706, 1)
 
 [node name="CollisionShape3D7" type="CollisionShape3D" parent="ColisionsStuff" unique_id=1693517665]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2197034, 1.6561601, -4.834791)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1133783, 1.6561601, -4.834791)
 shape = SubResource("CylinderShape3D_cm0pq")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="ColisionsStuff" unique_id=194967900]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3602667, 1.7592876, -4.8802156)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5194652, 1.7592876, -4.8802156)
 shape = SubResource("CylinderShape3D_fos0i")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="CollisionShape3D9" type="CollisionShape3D" parent="ColisionsStuff" unique_id=408985084]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4038239, 1.5628419, -12.332256)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5264294, 1.5628419, -12.118011)
 shape = SubResource("CylinderShape3D_3dxm6")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="CollisionShape3D10" type="CollisionShape3D" parent="ColisionsStuff" unique_id=1363107643]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3893423, 1.5826478, -12.465556)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.236085, 1.5826478, -12.312506)
 shape = SubResource("CylinderShape3D_lgr22")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
@@ -153,12 +154,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.31647, -0.60318637, -8.6426
 script = ExtResource("4_cm0pq")
 
 [node name="CollisionShape3D12" type="CollisionShape3D" parent="ColisionsStuff/DieIfTouthed" unique_id=1289926220]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1384958, 0)
-shape = SubResource("BoxShape3D_03owx")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13114786, 0.9247755, 0.1794138)
+shape = SubResource("BoxShape3D_5vvyt")
 debug_color = Color(0.9474059, 3.778264e-06, 1.732707e-06, 1)
 
 [node name="CollisionShape3D13" type="CollisionShape3D" parent="ColisionsStuff/DieIfTouthed" unique_id=2136180949]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.71404, -70.207085, 47.24644)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.71404, -83.73119, 47.24644)
 shape = SubResource("BoxShape3D_20pc6")
 debug_color = Color(0.9474059, 3.778264e-06, 1.732707e-06, 1)
 
@@ -166,6 +167,17 @@ debug_color = Color(0.9474059, 3.778264e-06, 1.732707e-06, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44952393, 1.4899976, -8.376809)
 shape = SubResource("BoxShape3D_wkp8b")
 debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="NextLevelIfTouhFlag" type="Node3D" parent="ColisionsStuff" unique_id=1456308527]
+
+[node name="NextLevel" type="Area3D" parent="ColisionsStuff/NextLevelIfTouhFlag" unique_id=254390165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.31647, -0.60318637, -8.64269)
+script = ExtResource("4_trn2v")
+
+[node name="NextLevel" type="CollisionShape3D" parent="ColisionsStuff/NextLevelIfTouhFlag/NextLevel" unique_id=113309626]
+transform = Transform3D(-0.037777416, 0.9992862, 0, -0.9992862, -0.037777416, 0, 0, 0, 1, -8.534235, 5.121561, -4.325198)
+shape = SubResource("BoxShape3D_c6i3y")
+debug_color = Color(0.9474059, 3.778264e-06, 1.732707e-06, 1)
 
 [node name="Control" type="Control" parent="." unique_id=123061129]
 layout_mode = 3
@@ -205,6 +217,10 @@ light_energy = 0.3
 [node name="Fire" parent="." unique_id=1196312945 instance=ExtResource("7_lgr22")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9.185909, 1.377228, -0.39985013)
 
+[node name="Player" parent="." unique_id=1043052854 instance=ExtResource("1_uu6xs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.1564846, 0)
+
 [connection signal="body_entered" from="ColisionsStuff/DieIfTouthed" to="ColisionsStuff/DieIfTouthed" method="_on_body_entered"]
+[connection signal="body_entered" from="ColisionsStuff/NextLevelIfTouhFlag/NextLevel" to="ColisionsStuff/NextLevelIfTouhFlag/NextLevel" method="_on_body_entered"]
 [connection signal="pressed" from="Control/MuteMusic" to="Control" method="_on_mute_music_pressed"]
 [connection signal="pressed" from="Control/Quit" to="Control" method="_on_quit_pressed"]
