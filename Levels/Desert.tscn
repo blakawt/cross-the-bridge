@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://6o2w2iwswrm1"]
 
-[ext_resource type="PackedScene" uid="uid://b5857tixmwb03" path="res://player.tscn" id="1_du06y"]
 [ext_resource type="PackedScene" uid="uid://dgg3jx5oyolbu" path="res://model 3D/desert.blend" id="2_m53e1"]
 [ext_resource type="Script" uid="uid://covjxe2ts8xvi" path="res://die_if_touthed.gd" id="3_pqmt4"]
 [ext_resource type="PackedScene" uid="uid://cg3m5qnyxjev4" path="res://Assets/sky/examples/sky.tscn" id="4_bt7jf"]
@@ -51,9 +50,6 @@ size = Vector3(1.3066559, 0.001, 3.5707092)
 size = Vector3(1.3066559, 0.001, 3.804596)
 
 [node name="Desert" type="Node3D" unique_id=800609399]
-
-[node name="Player" parent="." unique_id=1043052854 instance=ExtResource("1_du06y")]
-transform = Transform3D(1, 0, 0, 0, 3.0371456, -0.12783737, 0, 0.36049122, 1.0770324, -6.718096, 43.69095, -6.5194874)
 
 [node name="desert" parent="." unique_id=1117513294 instance=ExtResource("2_m53e1")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 2.1607137, -7.332918, 1.3952208)
