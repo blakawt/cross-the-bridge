@@ -2,12 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://b5857tixmwb03" path="res://player.tscn" id="1_uu6xs"]
 [ext_resource type="AudioStream" uid="uid://cpxvefguhv370" path="res://Assets/geoffreyburch-man-is-he-mega-glbml-22045.mp3" id="2_uu6xs"]
-[ext_resource type="PackedScene" uid="uid://c8c2r1xhw1g35" path="res://model 3D/mondes du projet teste.blend" id="3_r0du0"]
-[ext_resource type="Script" uid="uid://covjxe2ts8xvi" path="res://die_if_touthed.gd" id="4_cm0pq"]
+[ext_resource type="Script" path="res://die_if_touthed.gd" id="4_cm0pq"]
 [ext_resource type="Script" uid="uid://dgyjcynrlm8b4" path="res://next_level.gd" id="4_trn2v"]
 [ext_resource type="PackedScene" uid="uid://cg3m5qnyxjev4" path="res://Assets/sky/examples/sky.tscn" id="5_fos0i"]
 [ext_resource type="Script" uid="uid://b8w4c37iygagr" path="res://control.gd" id="6_3dxm6"]
-[ext_resource type="PackedScene" uid="uid://bm7vcvgua2xi7" path="res://Assets/Fire_Lowpoly.tscn" id="7_lgr22"]
+[ext_resource type="PackedScene" path="res://Assets/Fire_Lowpoly.tscn" id="7_lgr22"]
 [ext_resource type="PackedScene" uid="uid://dvyhb36n27y7o" path="res://model 3D/première scène fini.blend" id="9_03owx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cm0pq"]
@@ -64,14 +63,6 @@ stream = ExtResource("2_uu6xs")
 volume_db = -5.0
 autoplay = true
 parameters/looping = true
-
-[node name="mondes du projet teste" parent="." unique_id=342138709 instance=ExtResource("3_r0du0")]
-transform = Transform3D(-2.498503, 0, -0.08650759, 0, 2.5, 0, 0.08650759, 0, -2.498503, -8.477234, -65.200325, -14.847561)
-
-[node name="Label3D" type="Label3D" parent="mondes du projet teste" unique_id=442935957]
-transform = Transform3D(-0.9999986, 0, -0.0016232133, 0, 1, 0, 0.0016232133, 0, -0.9999986, -6.0780687, 31.02676, 7.7049813)
-text = "Cetait chian -nat"
-font_size = 200
 
 [node name="ColisionsStuff" type="CharacterBody3D" parent="." unique_id=209248370]
 
@@ -226,7 +217,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9.185909, 1.377228, -0.
 [node name="Player" parent="." unique_id=1043052854 instance=ExtResource("1_uu6xs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.1564846, 0)
 
-[node name="première scène fini" parent="." unique_id=430000005 instance=ExtResource("9_03owx")]
+[node name="première scène fini" parent="." unique_id=490754441 instance=ExtResource("9_03owx")]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 20.995, -65.2, -28.229)
 
 [connection signal="body_entered" from="ColisionsStuff/DieIfTouthed" to="ColisionsStuff/DieIfTouthed" method="_on_body_entered"]
