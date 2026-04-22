@@ -53,7 +53,7 @@ size = Vector3(1.3066559, 0.001, 3.804596)
 [node name="Desert" type="Node3D" unique_id=800609399]
 
 [node name="Player" parent="." unique_id=1043052854 instance=ExtResource("1_du06y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.718096, 37.498657, -6.5194874)
+transform = Transform3D(1, 0, 0, 0, 3.0371456, -0.12783737, 0, 0.36049122, 1.0770324, -6.718096, 43.69095, -6.5194874)
 
 [node name="desert" parent="." unique_id=1117513294 instance=ExtResource("2_m53e1")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 2.1607137, -7.332918, 1.3952208)
