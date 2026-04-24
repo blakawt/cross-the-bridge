@@ -2,8 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://cg3m5qnyxjev4" path="res://Assets/sky/examples/sky.tscn" id="1_p4q7i"]
 [ext_resource type="PackedScene" uid="uid://ce0puvf7pcess" path="res://model 3D/map desert.blend" id="2_7ugnx"]
-[ext_resource type="Script" uid="uid://dgyjcynrlm8b4" path="res://next_level.gd" id="3_glkx2"]
 [ext_resource type="PackedScene" uid="uid://b5857tixmwb03" path="res://player.tscn" id="3_sr137"]
+[ext_resource type="Script" uid="uid://b8w4c37iygagr" path="res://control.gd" id="5_bglwq"]
+[ext_resource type="AudioStream" uid="uid://b06lpul7vliop" path="res://Assets/howling_hound_music-retro-egyptian-theme-187380.mp3" id="5_c1pvg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sr137"]
 size = Vector3(12.278509, 10.813278, 20.445866)
@@ -14,8 +15,33 @@ size = Vector3(2.4550476, 10.388275, 13.261978)
 [sub_resource type="BoxShape3D" id="BoxShape3D_bglwq"]
 size = Vector3(4.2604427, 10.813278, 20.445866)
 
+[sub_resource type="GDScript" id="GDScript_c1pvg"]
+script/source = "extends Area3D
+
+@export var restart_delay := 0.1
+
+func _ready():
+	body_entered.connect(_on_body_entered)
+
+func _on_body_entered(body: Node3D) -> void:
+	if body.name == \"Player\":
+		get_tree().change_scene_to_file(\"res://Levels/credits.tscn\")
+"
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_c1pvg"]
 size = Vector3(2.7315345, 1.6306022, 0.32418066)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w8rqx"]
+size = Vector3(2.081482, 0.19290924, 0.5740967)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ywh8v"]
+size = Vector3(1.6769714, 0.17616749, 0.5516968)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5s42w"]
+size = Vector3(1.6769714, 0.17616749, 0.5516968)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ardvj"]
+size = Vector3(2.081482, 0.19290924, 0.5740967)
 
 [node name="Desert" type="Node3D" unique_id=572907547]
 
@@ -53,14 +79,77 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.05994, 0, 0)
 
 [node name="NextLevel" type="Area3D" parent="ColisionStuff/NextLevelIfTouhFlag" unique_id=774697090]
 transform = Transform3D(0.025915181, 0, 0.9996641, 0, 1, 0, -0.9996641, 0, 0.025915181, -155.14891, 65.33697, 2.201969)
-script = ExtResource("3_glkx2")
+script = SubResource("GDScript_c1pvg")
 
 [node name="NextLevel" type="CollisionShape3D" parent="ColisionStuff/NextLevelIfTouhFlag/NextLevel" unique_id=577820807]
 transform = Transform3D(-0.037777416, 0.99928325, 0, -0.9992862, -0.037777416, 0, 0, -2.7939677e-08, 1, -9.078403, 3.5788727, -22.603456)
 shape = SubResource("BoxShape3D_c1pvg")
 debug_color = Color(0.9474059, 3.778264e-06, 1.732707e-06, 1)
 
+[node name="Bridge" type="CharacterBody3D" parent="ColisionStuff" unique_id=75493721]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ColisionStuff/Bridge" unique_id=2074862941]
+transform = Transform3D(0.021396086, 0, -0.99977106, 0, 1, 0, 0.99977106, 0, 0.021396086, -2.7227633, 67.857834, 6.010921)
+shape = SubResource("BoxShape3D_w8rqx")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="ColisionStuff/Bridge" unique_id=695044470]
+transform = Transform3D(0.021396087, 5.451023e-11, -0.9997711, 0.8286331, 0.5595111, 0.01773357, 0.5593831, -0.8288228, 0.011971352, -1.9950167, 67.27841, 6.444914)
+shape = SubResource("BoxShape3D_ywh8v")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="ColisionStuff/Bridge" unique_id=806559404]
+transform = Transform3D(0.021396086, 5.4510226e-11, -0.99977106, 0.98804474, 0.15270981, 0.021145135, 0.15267482, -0.98827094, 0.0032673916, -1.3063493, 67.27841, 6.7440834)
+shape = SubResource("BoxShape3D_5s42w")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="ColisionStuff/Bridge" unique_id=94703064]
+transform = Transform3D(0.021396086, 0, -0.99977106, 0, 1, 0, 0.99977106, 0, 0.021396086, -0.5755496, 67.857834, 6.010921)
+shape = SubResource("BoxShape3D_ardvj")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="ColisionStuff/Bridge" unique_id=49272565]
+transform = Transform3D(0.02139609, -2.8317163e-10, -0.9997712, 0.9485154, -0.3160796, 0.020299174, -0.3160073, -0.9487326, -0.0067628697, 0.12643778, 67.27841, 5.482992)
+shape = SubResource("BoxShape3D_5s42w")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
 [node name="Player" parent="." unique_id=1043052854 instance=ExtResource("3_sr137")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.423661, 70.179016, 12.046236)
 
+[node name="Control" type="Control" parent="Player" unique_id=997637003]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1060.0
+offset_bottom = -607.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_bglwq")
+
+[node name="MuteMusic" type="Button" parent="Player/Control" unique_id=1952341861]
+layout_mode = 0
+offset_left = 49.0
+offset_right = 98.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 30
+text = "🔇"
+flat = true
+
+[node name="Quit" type="Button" parent="Player/Control" unique_id=286998256]
+layout_mode = 0
+offset_right = 49.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 30
+text = "❌"
+flat = true
+
+[node name="HowlingHoundMusicRetroEgyptianTheme187380" type="AudioStreamPlayer3D" parent="." unique_id=23433239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1725836, 70.021706, 10.636113)
+stream = ExtResource("5_c1pvg")
+autoplay = true
+parameters/looping = true
+
 [connection signal="body_entered" from="ColisionStuff/NextLevelIfTouhFlag/NextLevel" to="ColisionStuff/NextLevelIfTouhFlag/NextLevel" method="_on_body_entered"]
+[connection signal="pressed" from="Player/Control/MuteMusic" to="Player/Control" method="_on_mute_music_pressed"]
+[connection signal="pressed" from="Player/Control/Quit" to="Player/Control" method="_on_quit_pressed"]
