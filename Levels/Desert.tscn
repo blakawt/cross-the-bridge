@@ -6,10 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://b5857tixmwb03" path="res://player.tscn" id="3_sr137"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sr137"]
-size = Vector3(11.139206, 10.813278, 20.445866)
+size = Vector3(12.278509, 10.813278, 20.445866)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_glkx2"]
 size = Vector3(2.4550476, 10.388275, 13.261978)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bglwq"]
+size = Vector3(4.2604427, 10.813278, 20.445866)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c1pvg"]
 size = Vector3(2.7315345, 1.6306022, 0.32418066)
@@ -31,13 +34,18 @@ light_energy = 2.267
 [node name="Ground" type="CharacterBody3D" parent="ColisionStuff" unique_id=41547074]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ColisionStuff/Ground" unique_id=1043160720]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.019699, 62.890694, 12.5139065)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.240308, 62.890694, 12.5139065)
 shape = SubResource("BoxShape3D_sr137")
 debug_color = Color(0, 0.8101759, 0.9396736, 1)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="ColisionStuff/Ground" unique_id=1913980234]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9589138, 62.678192, 11.980003)
 shape = SubResource("BoxShape3D_glkx2")
+debug_color = Color(0, 0.8101759, 0.9396736, 1)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="ColisionStuff/Ground" unique_id=989587138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6419077, 62.595154, 12.5139065)
+shape = SubResource("BoxShape3D_bglwq")
 debug_color = Color(0, 0.8101759, 0.9396736, 1)
 
 [node name="NextLevelIfTouhFlag" type="Node3D" parent="ColisionStuff" unique_id=1727577689]
