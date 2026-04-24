@@ -49,6 +49,7 @@ size = Vector3(2.081482, 0.19290924, 0.5740967)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 64.73373, 0)
 
 [node name="map desert" parent="." unique_id=1893156411 instance=ExtResource("2_7ugnx")]
+physics_interpolation_mode = 1
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.6012745, 47.67777, 11.247295)
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=2082013259]
