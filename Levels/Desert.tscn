@@ -2,10 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://cg3m5qnyxjev4" path="res://Assets/sky/examples/sky.tscn" id="1_p4q7i"]
 [ext_resource type="PackedScene" uid="uid://ce0puvf7pcess" path="res://model 3D/map desert.blend" id="2_7ugnx"]
+[ext_resource type="Script" uid="uid://dgyjcynrlm8b4" path="res://next_level.gd" id="3_glkx2"]
 [ext_resource type="PackedScene" uid="uid://b5857tixmwb03" path="res://player.tscn" id="3_sr137"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sr137"]
-size = Vector3(19.605225, 22.694763, 33.460205)
+size = Vector3(11.139206, 10.813278, 20.445866)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_glkx2"]
+size = Vector3(2.4550476, 10.388275, 13.261978)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c1pvg"]
+size = Vector3(4.315608, 1.6306022, 0.32418066)
 
 [node name="Desert" type="Node3D" unique_id=572907547]
 
@@ -13,20 +20,39 @@ size = Vector3(19.605225, 22.694763, 33.460205)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 64.73373, 0)
 
 [node name="map desert" parent="." unique_id=1945773290 instance=ExtResource("2_7ugnx")]
-transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 3.9946764, 33.986603, 11.247295)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.6012745, 47.67777, 11.247295)
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=2082013259]
 transform = Transform3D(0.95850533, -0.26887876, 0.094719514, 0.1304624, 0.11830569, -0.9843695, 0.25347018, 0.95588076, 0.1484752, 7.4625025, 83.05293, 10.42123)
 light_energy = 2.267
 
-[node name="Colision" type="Node3D" parent="." unique_id=482888189]
+[node name="ColisionStuff" type="Node3D" parent="." unique_id=482888189]
 
-[node name="Ground" type="CharacterBody3D" parent="Colision" unique_id=41547074]
+[node name="Ground" type="CharacterBody3D" parent="ColisionStuff" unique_id=41547074]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Colision/Ground" unique_id=1043160720]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0882568, 56.52495, 13.075317)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ColisionStuff/Ground" unique_id=1043160720]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.019699, 62.890694, 12.5139065)
 shape = SubResource("BoxShape3D_sr137")
 debug_color = Color(0, 0.8101759, 0.9396736, 1)
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="ColisionStuff/Ground" unique_id=1913980234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9589138, 62.678192, 11.980003)
+shape = SubResource("BoxShape3D_glkx2")
+debug_color = Color(0, 0.8101759, 0.9396736, 1)
+
+[node name="NextLevelIfTouhFlag" type="Node3D" parent="ColisionStuff" unique_id=1727577689]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.05994, 0, 0)
+
+[node name="NextLevel" type="Area3D" parent="ColisionStuff/NextLevelIfTouhFlag" unique_id=774697090]
+transform = Transform3D(0.025915181, 0, 0.9996641, 0, 1, 0, -0.9996641, 0, 0.025915181, -155.14891, 65.33697, 2.201969)
+script = ExtResource("3_glkx2")
+
+[node name="NextLevel" type="CollisionShape3D" parent="ColisionStuff/NextLevelIfTouhFlag/NextLevel" unique_id=577820807]
+transform = Transform3D(-0.037777416, 0.9992862, 0, -0.9992862, -0.037777416, 0, 0, 0, 1, -8.58009, 4.370349, -4.535488)
+shape = SubResource("BoxShape3D_c1pvg")
+debug_color = Color(0.9474059, 3.778264e-06, 1.732707e-06, 1)
+
 [node name="Player" parent="." unique_id=1043052854 instance=ExtResource("3_sr137")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 72.07718, 8.509228)
+transform = Transform3D(-0.013351326, 0, 0.9999109, 0, 1, 0, -0.9999109, 0, -0.013351326, -10.9268, 76.06757, 6.9156027)
+
+[connection signal="body_entered" from="ColisionStuff/NextLevelIfTouhFlag/NextLevel" to="ColisionStuff/NextLevelIfTouhFlag/NextLevel" method="_on_body_entered"]
