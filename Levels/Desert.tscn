@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cg3m5qnyxjev4" path="res://Assets/sky/examples/sky.tscn" id="1_p4q7i"]
 [ext_resource type="PackedScene" uid="uid://ce0puvf7pcess" path="res://model 3D/map desert.blend" id="2_7ugnx"]
+[ext_resource type="PackedScene" uid="uid://b5857tixmwb03" path="res://player.tscn" id="3_sr137"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sr137"]
 size = Vector3(19.605225, 22.694763, 33.460205)
@@ -11,7 +12,7 @@ size = Vector3(19.605225, 22.694763, 33.460205)
 [node name="Sky" parent="." unique_id=905391040 instance=ExtResource("1_p4q7i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 64.73373, 0)
 
-[node name="map desert" parent="." unique_id=619828417 instance=ExtResource("2_7ugnx")]
+[node name="map desert" parent="." unique_id=1945773290 instance=ExtResource("2_7ugnx")]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 3.9946764, 33.986603, 11.247295)
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=2082013259]
@@ -26,3 +27,6 @@ light_energy = 2.267
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0882568, 56.52495, 13.075317)
 shape = SubResource("BoxShape3D_sr137")
 debug_color = Color(0, 0.8101759, 0.9396736, 1)
+
+[node name="Player" parent="." unique_id=1043052854 instance=ExtResource("3_sr137")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 72.07718, 8.509228)
