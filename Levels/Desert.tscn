@@ -12,14 +12,14 @@ size = Vector3(11.139206, 10.813278, 20.445866)
 size = Vector3(2.4550476, 10.388275, 13.261978)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c1pvg"]
-size = Vector3(4.315608, 1.6306022, 0.32418066)
+size = Vector3(2.7315345, 1.6306022, 0.32418066)
 
 [node name="Desert" type="Node3D" unique_id=572907547]
 
 [node name="Sky" parent="." unique_id=905391040 instance=ExtResource("1_p4q7i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 64.73373, 0)
 
-[node name="map desert" parent="." unique_id=1945773290 instance=ExtResource("2_7ugnx")]
+[node name="map desert" parent="." unique_id=1893156411 instance=ExtResource("2_7ugnx")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.6012745, 47.67777, 11.247295)
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=2082013259]
@@ -48,11 +48,11 @@ transform = Transform3D(0.025915181, 0, 0.9996641, 0, 1, 0, -0.9996641, 0, 0.025
 script = ExtResource("3_glkx2")
 
 [node name="NextLevel" type="CollisionShape3D" parent="ColisionStuff/NextLevelIfTouhFlag/NextLevel" unique_id=577820807]
-transform = Transform3D(-0.037777416, 0.9992862, 0, -0.9992862, -0.037777416, 0, 0, 0, 1, -8.58009, 4.370349, -4.535488)
+transform = Transform3D(-0.037777416, 0.99928325, 0, -0.9992862, -0.037777416, 0, 0, -2.7939677e-08, 1, -9.078403, 3.5788727, -22.603456)
 shape = SubResource("BoxShape3D_c1pvg")
 debug_color = Color(0.9474059, 3.778264e-06, 1.732707e-06, 1)
 
 [node name="Player" parent="." unique_id=1043052854 instance=ExtResource("3_sr137")]
-transform = Transform3D(-0.013351326, 0, 0.9999109, 0, 1, 0, -0.9999109, 0, -0.013351326, -10.9268, 76.06757, 6.9156027)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.423661, 70.179016, 12.046236)
 
 [connection signal="body_entered" from="ColisionStuff/NextLevelIfTouhFlag/NextLevel" to="ColisionStuff/NextLevelIfTouhFlag/NextLevel" method="_on_body_entered"]
