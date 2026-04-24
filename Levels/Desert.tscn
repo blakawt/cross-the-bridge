@@ -10,13 +10,13 @@ size = Vector3(19.605225, 22.694763, 33.460205)
 [node name="Desert" type="Node3D" unique_id=572907547]
 
 [node name="Sky" parent="." unique_id=905391040 instance=ExtResource("1_p4q7i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 64.73373, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.569313, -12.958992, -45.932552)
 
 [node name="map desert" parent="." unique_id=1945773290 instance=ExtResource("2_7ugnx")]
-transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 3.9946764, 33.986603, 11.247295)
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -26.57463, -43.706116, -34.685257)
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=2082013259]
-transform = Transform3D(0.95850533, -0.26887876, 0.094719514, 0.1304624, 0.11830569, -0.9843695, 0.25347018, 0.95588076, 0.1484752, 7.4625025, 83.05293, 10.42123)
+transform = Transform3D(0.95850533, -0.26887876, 0.09471952, 0.1304624, 0.11830569, -0.9843695, 0.25347018, 0.95588076, 0.14847519, -23.106804, 5.3602123, -35.511322)
 light_energy = 2.267
 
 [node name="Colision" type="Node3D" parent="." unique_id=482888189]
@@ -24,9 +24,9 @@ light_energy = 2.267
 [node name="Ground" type="CharacterBody3D" parent="Colision" unique_id=41547074]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Colision/Ground" unique_id=1043160720]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0882568, 56.52495, 13.075317)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.481056, -21.16777, -32.857235)
 shape = SubResource("BoxShape3D_sr137")
 debug_color = Color(0, 0.8101759, 0.9396736, 1)
 
 [node name="Player" parent="." unique_id=1043052854 instance=ExtResource("3_sr137")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 72.07718, 8.509228)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.569313, -5.6155396, -37.423325)
