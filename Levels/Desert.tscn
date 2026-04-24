@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://6o2w2iwswrm1"]
+[gd_scene format=3 uid="uid://dvovf0flxk45n"]
 
 [ext_resource type="PackedScene" uid="uid://cg3m5qnyxjev4" path="res://Assets/sky/examples/sky.tscn" id="1_p4q7i"]
 [ext_resource type="PackedScene" uid="uid://ce0puvf7pcess" path="res://model 3D/map desert.blend" id="2_7ugnx"]
