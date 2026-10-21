@@ -218,7 +218,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9.185909, 1.377228, -0.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.1564846, 0)
 
 [node name="première scène fini" parent="." unique_id=490754441 instance=ExtResource("9_03owx")]
-transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 20.995, -65.2, -28.229)
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 20.991158, -65.263084, -28.23962)
 
 [connection signal="body_entered" from="ColisionsStuff/DieIfTouthed" to="ColisionsStuff/DieIfTouthed" method="_on_body_entered"]
 [connection signal="body_entered" from="ColisionsStuff/NextLevelIfTouhFlag/NextLevel" to="ColisionsStuff/NextLevelIfTouhFlag/NextLevel" method="_on_body_entered"]

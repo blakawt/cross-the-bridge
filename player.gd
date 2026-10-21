@@ -136,9 +136,9 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if is_multiplayer_authority():
 		# Show/hide mouse (can be useful for UI on mobile too)
-		if event.is_action_pressed("show_mouse"):
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-			return # Important: Don't process further camera input if showing mouse
+		#if event.is_action_pressed("show_mouse"):
+			#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			#return # Important: Don't process further camera input if showing mouse
 		
 		# Mobile Touch Input for Camera Control
 		if event is InputEventScreenDrag:
